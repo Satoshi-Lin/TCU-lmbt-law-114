@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>慈濟大學醫學檢驗生物技術學系系學會 法規</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 基本排版 */
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* header */
+    header {
+      background: linear-gradient(to right, #004c99, #007acc);
+      color: white;
+      padding: 2em 1em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo-title img {
+      height: 80px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin-top: 0.5em;
+      font-size: 1.1em;
+      color: #cce6ff;
+    }
+
+    /* 按鈕群組 */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 1em;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .button-group button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 0.6em 1.6em;
+      border-radius: 10px;
+      font-size: 1.05em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 122, 204, 0.4);
+    }
+    .button-group button:hover {
+      background-color: #005fa3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 95, 163, 0.5);
+    }
+
+    /* nav 區 */
+    nav {
+      background-color: #ffffff;
+      padding: 2em 1em;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      margin-top: 1em;
+      border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    nav label {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    select {
+      font-size: 1.1em;
+      padding: 0.8em 1em;
+      border-radius: 10px;
+      border: 1.5px solid #ccc;
+      width: 80%;
+      max-width: 500px;
+      margin-top: 1em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    select:hover {
+      border-color: #007acc;
+      box-shadow: 0 0 8px rgba(0, 122, 204, 0.3);
+    }
+
+    /* PDF Modal */
+    #pdfModal {
+      display: none;
+      position: fixed;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      z-index: 10000;
+      padding: 1em;
+      border-radius: 12px;
+    }
+    #pdfModal iframe {
+      width: 100%;
+      height: 90%;
+      border: none;
+      border-radius: 8px;
+    }
+    #pdfModal button {
+      float: right;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.5em 1.2em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin-bottom: 1em;
+    }
+    #pdfModal button:hover {
+      background-color: #c82333;
+    }
+
+    /* 表單區塊 */
+    .form-box {
+      background-color: #ffffff;
+      margin: 2em auto 4em;
+      padding: 2em;
+      max-width: 800px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .form-box h2 {
+      color: #004c99;
+      margin-bottom: 1em;
+    }
+    .form-box button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.6em 1.6em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.05em;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6);
+    }
+    .form-box button:hover {
+      background-color: #218838;
+      box-shadow: 0 6px 15px rgba(33, 136, 56, 0.8);
+    }
+    #googleForm {
+      margin-top: 1em;
+      display: none;
+      text-align: left;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #googleForm iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+    #googleForm > div {
+      text-align: right;
+      padding: 0.5em 1em;
+      background: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+    #googleForm > div button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.4em 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    #googleForm > div button:hover {
+      background-color: #c82333;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 1.2em;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #f0f0f0;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-title">
+    <img src="系學會勳章-removebg-preview.png" alt="系學會勳章" />
+    <div>
+      <h1>慈濟大學醫學檢驗生物技術學系系學會 法規</h1>
+      <p>快速查閱常用醫技系系學會相關法規文件</p>
+    </div>
+  </div>
+</header>
+
+<div class="button-group">
+  <button onclick="window.open('https://mtech.tcu.edu.tw/', '_blank')">🏠 醫技系學校官網</button>
+  <button onclick="window.open('https://www.instagram.com/tcu_._lmbt/?hl=zh-tw', '_blank')">📄 系學會IG</button>
+  <button onclick="openPDF()">⬇️ 開啟連署書</button>
+</div>
+
+<script>
+  function openPDF() {
+    window.open('附件 連署簽名.pdf', '_blank');  // 新分頁開啟 PDF
+  }
+</script>
+
+
+
+
+<nav>
+  <label for="lawSelect"><strong>📘 選擇法規文件：</strong></label><br />
+  <select id="lawSelect" aria-label="選擇法規文件">
+    <option value="組織章程.pdf">組織章程</option>
+    <option value="慈濟大學醫學檢驗生物技術學系系學會 會費及會員身分條例 (1).pdf">會費及會員身分條例</option>
+    <option value="慈濟大學醫學檢驗生物技術學系系學會 全國醫技盃交通費補助標準.pdf">全國醫技盃交通費補助標準</option>
+    <option value="決算法.pdf">決算法</option>
+    <option value="行政中心財產借用申請書.pdf">行政中心財產借用申請書</option>
+    <option value="行政中心財產外借辦法.pdf">行政中心財產外借辦法</option>
+    <option value="司法委員會組織暨審理案件法.pdf">司法委員會組織暨審理案件法</option>
+    <option value="資訊公開法.pdf">資訊公開法</option>
+    <option value="申訴書.pdf">申訴書</option>
+    <option value="放棄會員聲明書.pdf">放棄會員聲明書</option>
+  </select>
+</nav>
+
+<div id="pdfModal">
+  <button onclick="closeModal()">❌ 關閉</button>
+  <iframe id="modalViewer" title="PDF 內容"></iframe>
+</div>
+
+<div class="form-box">
+  <h2>📬 系學會法規意見回饋</h2>
+  <button onclick="toggleForm()" id="formToggleBtn">點此填寫意見表單</button>
+  <div id="googleForm">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeulSTQ4sQB8umfgIDwBpP6tlscshx7zmbw3tjuuVjwme88RQ/viewform?embedded=true"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="系學會法規意見回饋表單"
+    >載入中…</iframe>
+    <div>
+      <button onclick="toggleForm()">❌ 收起表單</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 慈濟大學醫技系系學會 ｜ 法規文件僅供本系內使用
+</footer>
+
+<script>
+  const select = document.getElementById("lawSelect");
+  const modal = document.getElementById("pdfModal");
+  const modalViewer = document.getElementById("modalViewer");
+  const googleForm = document.getElementById("googleForm");
+  const formToggleBtn = document.getElementById("formToggleBtn");
+
+  function openModal(pdfUrl) {
+    modal.style.display = "block";
+    modalViewer.src = encodeURI(pdfUrl);
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    modalViewer.src = "";
+  }
+
+  select.addEventListener("change", () => {
+    openModal(select.value);
+  });
+
+  function toggleForm() {
+    if (googleForm.style.display === "none" || googleForm.style.display === "") {
+      googleForm.style.display = "block";
+      formToggleBtn.textContent = "收起意見表單";
+    } else {
+      googleForm.style.display = "none";
+      formToggleBtn.textContent = "點此填寫意見表單";
+    }
+  }
+
+  function downloadZip() {
+    const filePath = "附件_連署簽名.pdf"; // 建議檔案改名避免空白和括號
+    const link = document.createElement("a");
+    link.href = encodeURI(filePath);
+    link.download = "附件_連署簽名.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>
